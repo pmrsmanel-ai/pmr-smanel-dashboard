@@ -32,9 +32,8 @@ import { getFirestore, doc, setDoc, onSnapshot } from 'firebase/firestore';
 let app = null;
 let auth = null;
 let db = null;
-let appId = 'default-app-id';
+let appId = 'pmr-smanel-live';
 
-// Konfigurasi aman agar tidak error jika dijalankan tanpa koneksi Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyAtaafsB2e7RB_1EgZ5AJxOrQrHOxBDLNk",
   authDomain: "pmr-smanel-dashboard.firebaseapp.com",
@@ -43,6 +42,15 @@ const firebaseConfig = {
   messagingSenderId: "1023504029235",
   appId: "1:1023504029235:web:4051ef78a3854d94fcf546"
 };
+
+// VVV TAMBAHKAN BLOK TRY-CATCH INI VVV
+try {
+  app = initializeApp(firebaseConfig);
+  auth = getAuth(app);
+  db = getFirestore(app);
+} catch (error) {
+  console.warn("Gagal inisialisasi Firebase", error);
+}
 
 // --- ICON MAPPING ---
 // Karena Firebase tidak bisa menyimpan komponen icon (seperti <Droplets />), 

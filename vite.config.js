@@ -7,5 +7,5 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: '/pmr-smanel-dashboard/'
+  base: '/' // <--- INI WAJIB HANYA TANDA GARIS MIRING
 })
