@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Mengaktifkan klik manual Dark Mode di Tailwind v4 */
+@variant dark (&:where(.dark, .dark *));
+
 /* Menyembunyikan scrollbar agar UI terlihat seperti aplikasi mobile */
 .scrollbar-hide::-webkit-scrollbar {
     display: none;
